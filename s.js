@@ -18,7 +18,7 @@ var BlueMarker = L.AwesomeMarkers.icon({
 // Lilly - Hostel in Marseille/train from Paris to Marseille
 
 // Shane - Near the eiffel tower in his apartment/Sciences Po paris
-var marker = L.marker([48.8540763, 2.3283652], {
+var marker = L.marker([48.8540763, 2.3423652], {
     opacity: 1.0,
     icon: BlueMarker
 }).addTo(map);
