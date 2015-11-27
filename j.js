@@ -19,7 +19,7 @@ var BlueMarker = L.AwesomeMarkers.icon({
 
 // Shane - Near the eiffel tower in his apartment/Sciences Po paris
 var marker = L.marker([48.8540763, 2.3283652], {
-    opacity: 1.0,
+    opacity: 0.8,
     icon: BlueMarker
 
 }).addTo(map);
@@ -41,10 +41,10 @@ var marker = L.marker([48.8518864, 2.3560525], {
     opacity: 1.0,
     icon: BlueMarker
 }).addTo(map);
-// var popup = L.popup({
-    // closeButton: false,
-// }).setContent("Johnathan")
-// marker.bindPopup(popup).openPopup();
+var popup = L.popup({
+    closeButton: false,
+}).setContent("Le Gaulois Pub")
+marker.bindPopup(popup).openPopup();
 
 var Attacks = {
     "keys": ["1", "2", "5", "3", "4"],

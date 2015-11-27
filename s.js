@@ -21,8 +21,12 @@ var BlueMarker = L.AwesomeMarkers.icon({
 var marker = L.marker([48.8540763, 2.3283652], {
     opacity: 1.0,
     icon: BlueMarker
-
 }).addTo(map);
+var popup = L.popup({
+    closeButton: false,
+}).setContent("Shane's Photo")
+marker.bindPopup(popup).openPopup();
+
 // Charly - Queen’s campus 
 
 // Katarina - train from Paris to London
@@ -38,7 +42,7 @@ var marker = L.marker([48.8540763, 2.3283652], {
 
 // Johnathan - Le Gaulois pub in the 6th arrondissement of Paris
 var marker = L.marker([48.8518864, 2.3560525], {
-    opacity: 1.0,
+    opacity: .8,
     icon: BlueMarker
 }).addTo(map);
 // var popup = L.popup({

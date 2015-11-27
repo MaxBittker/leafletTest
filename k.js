@@ -19,15 +19,18 @@ var BlueMarker = L.AwesomeMarkers.icon({
 
 // Shane - Near the eiffel tower in his apartment/Sciences Po paris
 var marker = L.marker([48.8540763, 2.3283652], {
-    opacity: 1.0,
+    opacity: .7,
     icon: BlueMarker
 
 }).addTo(map);
 // Charly - Queen’s campus 
 
 // Katarina - train from Paris to London
+// var marker = L.marker([48.8537627, 2.3819893], {
+//     opacity: 1.0,
+//     icon: BlueMarker
+// }).addTo(map);
 
-	
 // Candice - dorm room at Aix-Marseille Graduate School of Management
 // var marker = L.marker([43.5863647, 5.4226695], {
 //     opacity: 1.0,
@@ -38,13 +41,14 @@ var marker = L.marker([48.8540763, 2.3283652], {
 
 // Johnathan - Le Gaulois pub in the 6th arrondissement of Paris
 var marker = L.marker([48.8518864, 2.3560525], {
-    opacity: 1.0,
+    opacity: .7,
     icon: BlueMarker
 }).addTo(map);
 // var popup = L.popup({
-    // closeButton: false,
+// closeButton: false,
 // }).setContent("Johnathan")
 // marker.bindPopup(popup).openPopup();
+
 
 var Attacks = {
     "keys": ["1", "2", "5", "3", "4"],
@@ -108,6 +112,9 @@ var redMarker = L.AwesomeMarkers.icon({
     markerColor: 'red'
 });
 
+var popup = L.popup({
+    closeButton: false,
+}).setContent("La Belle Equipe")
 
 L.marker([51.941196, 4.512291], {
     icon: redMarker
@@ -117,7 +124,13 @@ Attacks.keys.forEach(key => {
         opacity: 1,
         icon: redMarker
     }).addTo(map);
+    if (key === "4")
+        marker.bindPopup(popup).openPopup();
+
 })
+
+
+
 
 
 //shane eifel tower
