@@ -27,7 +27,7 @@ var marker = L.marker([48.8540763, 2.3283652], {
 
 // Katarina - train from Paris to London
 
-	
+
 // Candice - dorm room at Aix-Marseille Graduate School of Management
 // var marker = L.marker([43.5863647, 5.4226695], {
 //     opacity: 1.0,
@@ -112,7 +112,7 @@ var redMarker = L.AwesomeMarkers.icon({
 L.marker([51.941196, 4.512291], {
     icon: redMarker
 }).addTo(map);
-Attacks.keys.forEach(key => {
+Attacks.keys.forEach(function(key) {
     var marker = L.marker([Attacks.data[key].lats, Attacks.data[key].longs], {
         opacity: 1,
         icon: redMarker

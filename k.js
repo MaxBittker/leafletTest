@@ -119,7 +119,8 @@ var popup = L.popup({
 L.marker([51.941196, 4.512291], {
     icon: redMarker
 }).addTo(map);
-Attacks.keys.forEach(key => {
+
+Attacks.keys.forEach(function(key) {
     var marker = L.marker([Attacks.data[key].lats, Attacks.data[key].longs], {
         opacity: 1,
         icon: redMarker
@@ -128,6 +129,7 @@ Attacks.keys.forEach(key => {
         marker.bindPopup(popup).openPopup();
 
 })
+
 
 
 

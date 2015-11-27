@@ -18,7 +18,7 @@ var BlueMarker = L.AwesomeMarkers.icon({
 // Lilly - Hostel in Marseille/train from Paris to Marseille
 
 // Shane - Near the eiffel tower in his apartment/Sciences Po paris
-var marker = L.marker([48.8540763, 2.3423652], {
+var marker = L.marker([48.8540763, 2.3283652], {
     opacity: 1.0,
     icon: BlueMarker
 }).addTo(map);
@@ -116,7 +116,7 @@ var redMarker = L.AwesomeMarkers.icon({
 L.marker([51.941196, 4.512291], {
     icon: redMarker
 }).addTo(map);
-Attacks.keys.forEach(key => {
+Attacks.keys.forEach(function(key){
     var marker = L.marker([Attacks.data[key].lats, Attacks.data[key].longs], {
         opacity: 1,
         icon: redMarker
