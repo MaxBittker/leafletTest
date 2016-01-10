@@ -270,9 +270,9 @@ var redMarker = L.AwesomeMarkers.icon({
 
 
 incidints.forEach(function(inc) {
-    var marker = L.marker(inc, {
+    var marker = L.marker([inc[0] + ((Math.random() - .5) / 500),
+     inc[1] + ((Math.random() - .5) / 500)], {
         opacity: 1,
         icon: redMarker
     }).addTo(map);
 })
-
