@@ -1,4 +1,4 @@
-var map = L.map('map').setView([44.23, -76.49], 14);
+var map = L.map('map').setView([44.23, -76.49], 15);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -260,7 +260,13 @@ var incidints = [
     [44.23449950000001, -76.4957039],
     [44.2325854, -76.4890641]
 ]
-
+var jittered = []
+var factor = 1000
+for (var i = 0; i < incidints.length; i++) {
+    jittered.push([incidints[i][0] + ((Math.random() - .5) / factor),
+        incidints[i][1] + ((Math.random() - .5) / factor)
+    ])
+}
 
 var redMarker = L.AwesomeMarkers.icon({
     icon: 'flash',
@@ -268,11 +274,14 @@ var redMarker = L.AwesomeMarkers.icon({
     markerColor: 'red'
 });
 
+    // incidints.forEach(function(inc) {
+    //     var marker = L.marker([inc[0] + ((Math.random() - .5) / 500),
+    //      inc[1] + ((Math.random() - .5) / 500)], {
+    //         opacity: 1,
+    //         icon: redMarker
+    //     }).addTo(map);
+    // })
 
-incidints.forEach(function(inc) {
-    var marker = L.marker([inc[0] + ((Math.random() - .5) / 500),
-     inc[1] + ((Math.random() - .5) / 500)], {
-        opacity: 1,
-        icon: redMarker
-    }).addTo(map);
-})
+var heat = L.heatLayer(jittered, {
+    radius: 25
+}).addTo(map);
