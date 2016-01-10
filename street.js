@@ -261,26 +261,26 @@ var incidints = [
     [44.2325854, -76.4890641]
 ]
 var jittered = []
-var factor = 1000
+var factor = 1200
 for (var i = 0; i < incidints.length; i++) {
     jittered.push([incidints[i][0] + ((Math.random() - .5) / factor),
         incidints[i][1] + ((Math.random() - .5) / factor)
     ])
 }
 
-var redMarker = L.AwesomeMarkers.icon({
-    icon: 'flash',
-    prefix: 'fa',
-    markerColor: 'red'
-});
+// var redMarker = L.AwesomeMarkers.icon({
+//     icon: 'flash',
+//     prefix: 'fa',
+//     markerColor: 'red'
+// });
 
-    // incidints.forEach(function(inc) {
-    //     var marker = L.marker([inc[0] + ((Math.random() - .5) / 500),
-    //      inc[1] + ((Math.random() - .5) / 500)], {
-    //         opacity: 1,
-    //         icon: redMarker
-    //     }).addTo(map);
-    // })
+// incidints.forEach(function(inc) {
+//     var marker = L.marker([inc[0] + ((Math.random() - .5) / 500),
+//      inc[1] + ((Math.random() - .5) / 500)], {
+//         opacity: 1,
+//         icon: redMarker
+//     }).addTo(map);
+// })
 
 var heat = L.heatLayer(jittered, {
     radius: 25
