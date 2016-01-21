@@ -261,7 +261,7 @@ var incidints = [
     [44.2325854, -76.4890641]
 ]
 var jittered = []
-var factor = 1900
+var factor = 19000
 for (var i = 0; i < incidints.length; i++) {
     jittered.push([incidints[i][0] + ((Math.random() - .5) / factor),
         incidints[i][1] + ((Math.random() - .5) / factor)
