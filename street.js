@@ -262,9 +262,11 @@ var incidints = [
 ]
 var jittered = []
 var factor = 19000
+var intensity = .3
 for (var i = 0; i < incidints.length; i++) {
     jittered.push([incidints[i][0] + ((Math.random() - .5) / factor),
-        incidints[i][1] + ((Math.random() - .5) / factor)
+        incidints[i][1] + ((Math.random() - .5) / factor),
+        intensity
     ])
 }
 
@@ -283,5 +285,6 @@ for (var i = 0; i < incidints.length; i++) {
 // })
 
 var heat = L.heatLayer(jittered, {
-    radius: 30
+    radius: 30,
+    blur: 30
 }).addTo(map);
